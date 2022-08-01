@@ -1,0 +1,31 @@
+h4,
+h5 {
+  font-family: nyt-cheltenham, georgia, "times new roman", times, serif;
+}
+
+label {
+  font-size: 0.75em;
+  font-weight: 700;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form-container-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form-container-group1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+label {
+  display: inline-block;
+  width: 12rem;
+  text-align: left;
+}

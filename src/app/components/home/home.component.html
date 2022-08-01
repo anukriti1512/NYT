@@ -1,0 +1,24 @@
+<div class="news-container">
+  <div class="row col-10" *ngFor="let topStory of topStories">
+    <mat-card class="example-card">
+      <mat-card-title>{{ topStory.title }}</mat-card-title>
+      <mat-card-subtitle>{{
+        topStory.published_date | date
+      }}</mat-card-subtitle>
+      <mat-card-content>
+        <div class="card-content">
+          <p>
+            {{ topStory.abstract }}
+          </p>
+          <img [src]="topStory.multimedia[0].url" height="20%" width="20%" />
+        </div>
+      </mat-card-content>
+      <!-- <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </mat-card-actions> -->
+    </mat-card>
+
+    <hr />
+  </div>
+</div>

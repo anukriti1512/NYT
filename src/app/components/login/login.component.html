@@ -1,0 +1,79 @@
+<!-- <div class="container text-center">
+  <h5>Create an account or Log in</h5>
+
+ signUp form
+  <div class="row text-center">
+    <form [formGroup]="signUpForm" (ngSubmit)="onSubmitSignUpForm(signUpForm)">
+      <label> First Name : </label>
+      <input type="text" formControlName="firstName" />
+
+      <label> Last Name : </label>
+      <input type="text" formControlName="lastName" />
+
+      <label> Email : </label>
+      <input type="text" formControlName="email" />
+
+      <label> Password : </label>
+      <input type="password" formControlName="password" />
+
+      <button type="submit">Register</button>
+    </form>
+  </div>
+
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmitLoginForm(loginForm)">
+    <label> Email : </label>
+    <input type="text" formControlName="email" />
+
+    <label> Password : </label>
+    <input type="password" formControlName="password" />
+
+    <button type="submit">Log in</button>
+  </form>
+</div> -->
+
+<div class="main-container">
+  <div>
+    <h5>Create an account or Log in</h5>
+  </div>
+</div>
+
+<!-- signUp form -->
+<div class="form-container-group row" [ngSwitch]="mode">
+  <div class="col-8" *ngSwitchCase="'signUp'">
+    <form
+      [formGroup]="signUpForm"
+      (ngSubmit)="onSubmitSignUpForm(signUpForm)"
+      class="form-container-group1 col-12"
+    >
+      <label> First Name : </label>
+      <input type="text" formControlName="firstName" />
+
+      <label> Last Name : </label>
+      <input type="text" formControlName="lastName" />
+
+      <label> Email : </label>
+      <input type="text" formControlName="email" />
+
+      <label> Password : </label>
+      <input type="password" formControlName="password" />
+
+      <button type="submit">Register</button>
+    </form>
+  </div>
+
+  <div class="col-8" *ngSwitchCase="'login'">
+    <form
+      [formGroup]="loginForm"
+      (ngSubmit)="onSubmitLoginForm(loginForm)"
+      class="form-container-group1 col-12"
+    >
+      <label> Email : </label>
+      <input type="text" formControlName="email" />
+
+      <label> Password : </label>
+      <input type="password" formControlName="password" />
+
+      <button type="submit">Log in</button>
+    </form>
+  </div>
+</div>
