@@ -1,0 +1,58 @@
+.example-card {
+  max-width: 100%;
+  margin-bottom: 2%;
+}
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.card-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.news-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.2rem;
+}
+mat-card {
+  background: white;
+  height: 100%;
+  width: 100%;
+  margin: 0.2rem;
+  border-bottom: 1px solid var(--color-stroke-quaternary, #dfdfdf);
+  box-shadow: none !important;
+  border-radius: 2.5px;
+}
+mat-card-title {
+  font-family: nyt-cheltenham, georgia, "times new roman", times, serif;
+  font-size: 1.125rem;
+  line-height: 1.2em;
+  -webkit-letter-spacing: 0.01em;
+  -moz-letter-spacing: 0.01em;
+  -ms-letter-spacing: 0.01em;
+  letter-spacing: 0.01em;
+  color: var(--color-content-primary, #121212);
+  font-weight: 700;
+  -webkit-font-smoothing: antialiased;
+}
+mat-card-subtitle {
+  color: #aca9a9;
+  font-size: smaller;
+}
+mat-card-content {
+  color: var(--color-content-tertiary, #5a5a5a);
+  font-family: nyt-imperial;
+  font-size: 0.875rem;
+  -webkit-letter-spacing: 0.1px;
+  -moz-letter-spacing: 0.1px;
+  -ms-letter-spacing: 0.1px;
+  letter-spacing: 0.1px;
+  line-height: 1.1875rem;
+  margin: 0;
+  padding: 0;
+}

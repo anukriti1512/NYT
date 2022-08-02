@@ -1,1 +1,42 @@
-<p>world works!</p>
+<div class="news-container">
+  <ng-container *ngFor="let topStory of topStories">
+    <div
+      class="col-3"
+      *ngIf="topStory?.section === 'world'"
+      style="padding: 0px"
+    >
+      <mat-card
+        *ngIf="topStory?.section === 'world'"
+        class="example-card"
+        (click)="viewArticle(topStory.url, topStory.uri)"
+      >
+        <div class="card-content">
+          <div class="">
+            <mat-card-title>{{ topStory.title }}</mat-card-title>
+            <mat-card-subtitle>{{
+              topStory.published_date | date
+            }}</mat-card-subtitle>
+            <mat-card-content>
+              <div>
+                <p>
+                  {{ topStory.abstract }}
+                </p>
+              </div>
+            </mat-card-content>
+            <!-- <mat-card-actions>
+          <button mat-button>LIKE</button>
+          <button mat-button>SHARE</button>
+        </mat-card-actions> -->
+          </div>
+          <ng-container *ngIf="topStory?.multimedia">
+            <img
+              [src]="topStory.multimedia[0].url"
+              height="100%"
+              width="100%"
+            />
+          </ng-container>
+        </div>
+      </mat-card>
+    </div>
+  </ng-container>
+</div>

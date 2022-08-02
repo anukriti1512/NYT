@@ -34,6 +34,12 @@ export class HomeService {
       'https://api.nytimes.com/svc/topstories/v2?api-key=iGE3e1cqW5GI6LPlcI1xOQiIHF1awGNm/article/12bce18e-b96c-5e3b-afe2-cc40d67d3454'
     );
   }
+
+  getSectionCategoryStories(category: string) {
+    return this.http.get(
+      `https://api.nytimes.com/svc/topstories/v2/${category}.json?api-key=iGE3e1cqW5GI6LPlcI1xOQiIHF1awGNm`
+    );
+  }
 }
 
 // All interfaces
