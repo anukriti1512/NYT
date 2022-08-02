@@ -1,3 +1,36 @@
+.category-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 5px 0 4px;
+  margin: 0 60px;
+  align-items: center;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+.category-nav-container,
+.line-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #ebebeb;
+  border-bottom: 1px solid #000;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  width: 80%;
+}
+.line-container {
+  margin-bottom: 1rem;
+}
+.category-nav-item {
+  display: inline-block;
+  font-family: nyt-franklin, helvetica, arial, sans-serif;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 500;
+}
 .example-card {
   max-width: 100%;
   margin-bottom: 2%;
