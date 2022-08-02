@@ -1,0 +1,40 @@
+.main-container {
+  display: flex;
+  justify-content: center;
+}
+.article-details-container {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center;
+  align-items: center; */
+  gap: 30px;
+}
+.heading-container {
+  color: var(--color-content-primary, #121212);
+  font-family: nyt-cheltenham, georgia, "times new roman", times, serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  line-height: 2.875rem;
+}
+.published-date-container {
+  text-decoration: none;
+  line-height: unset;
+  font-family: nyt-franklin, helvetica, arial, sans-serif;
+  color: var(--color-content-secondary, #363636);
+  font-size: 0.8125rem;
+  font-weight: 700;
+}
+.byline-container {
+  color: var(--color-content-secondary, #363636);
+  text-underline-offset: 1px;
+  text-size-adjust: 100%;
+  font: inherit;
+}
+.paragraph-container {
+  display: block;
+  color: #333;
+  background-color: white;
+  font: inherit;
+  font-size: 1.25rem;
+  line-height: 1.875rem;
+}

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { HomeService, Result } from '../services/home.service';
 
 @Component({
@@ -16,7 +17,7 @@ export class HomeComponent implements OnInit {
   originally bred for hunting.`;
   //
 
-  constructor(public homeService: HomeService) {}
+  constructor(public homeService: HomeService, private router: Router) {}
 
   ngOnInit(): void {
     this.homeService.getTopStories().subscribe((data) => {
@@ -24,5 +25,12 @@ export class HomeComponent implements OnInit {
       this.topStories = data.results;
       console.log('Top stories API DATA', this.topStories);
     });
+  }
+
+  viewArticle(url: string, uri: string) {
+    // window.location.href = uri;
+    // window.open(uri);
+    // this.homeService.getUri().subscribe((data) => console.log(data));
+    this.router.navigate(['/article-detail/', uri]);
   }
 }

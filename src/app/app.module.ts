@@ -14,6 +14,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './Angular Material module/angular-material/angular-material.module';
+import { ArticleDetailComponent } from './components/article-detail/article-detail.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { AngularMaterialModule } from './Angular Material module/angular-materia
     HeaderComponent,
     FooterComponent,
     LoginComponent,
+    ArticleDetailComponent,
   ],
   imports: [
     BrowserModule,

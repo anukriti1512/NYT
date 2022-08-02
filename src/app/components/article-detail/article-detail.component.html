@@ -1,0 +1,16 @@
+<div class="row" class="main-container">
+  <div class="article-details-container col-7">
+    <div class="heading-container">{{ articleDetailsData?.headline.main }}</div>
+    <div>
+      <div class="published-date-container">
+        {{ articleDetailsData?.pub_date | date }}
+      </div>
+      <div class="byline-container">
+        {{ articleDetailsData?.byline.original }}
+      </div>
+    </div>
+    <div class="paragraph-container">
+      {{ articleDetailsData?.lead_paragraph }}
+    </div>
+  </div>
+</div>

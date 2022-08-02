@@ -6,11 +6,32 @@ import { Observable } from 'rxjs/internal/Observable';
   providedIn: 'root',
 })
 export class HomeService {
+  // headerDict: string | { [name: string]: string | string[] } | undefined;
+
+  //
   constructor(private http: HttpClient) {}
 
   getTopStories(): Observable<topStories> {
     return this.http.get<topStories>(
       'https://api.nytimes.com/svc/topstories/v2/home.json?api-key=iGE3e1cqW5GI6LPlcI1xOQiIHF1awGNm'
+    );
+  }
+
+  getUri() {
+    // const headerDict = {
+    //   'api-key': 'iGE3e1cqW5GI6LPlcI1xOQiIHF1awGNm',
+    // };
+
+    // const requestOptions = {
+    //   headers: new HttpHeaders(this.headerDict),
+    // };
+    // return this.http.get(
+    //   'https://api.nytimes.com/svc/topstories/v2/article/12bce18e-b96c-5e3b-afe2-cc40d67d3454',
+    //   requestOptions
+    // );
+
+    return this.http.get<topStories>(
+      'https://api.nytimes.com/svc/topstories/v2?api-key=iGE3e1cqW5GI6LPlcI1xOQiIHF1awGNm/article/12bce18e-b96c-5e3b-afe2-cc40d67d3454'
     );
   }
 }
