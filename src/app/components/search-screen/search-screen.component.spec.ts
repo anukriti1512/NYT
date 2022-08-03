@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 import { SearchScreenComponent } from './search-screen.component';
 
 describe('SearchScreenComponent', () => {
@@ -8,9 +9,9 @@ describe('SearchScreenComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SearchScreenComponent ]
-    })
-    .compileComponents();
+      declarations: [SearchScreenComponent],
+      imports: [RouterTestingModule, HttpClientTestingModule],
+    }).compileComponents();
   });
 
   beforeEach(() => {
