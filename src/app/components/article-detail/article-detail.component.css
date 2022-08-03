@@ -5,8 +5,6 @@
 .article-details-container {
   display: flex;
   flex-direction: column;
-  /* justify-content: center;
-  align-items: center; */
   gap: 30px;
 }
 .heading-container {

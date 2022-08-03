@@ -1,0 +1,132 @@
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+}
+
+.main-container,
+.articles-container {
+  display: flex;
+}
+.main-container {
+  justify-content: center;
+}
+.results {
+  display: flex;
+  justify-content: flex-start;
+  gap: 2rem;
+  margin: 0.5rem;
+}
+.search-container {
+  display: flex;
+  align-items: center;
+  background-color: black;
+  justify-content: space-between;
+  padding: 0.4rem;
+}
+mat-form-field,
+mat-icon {
+  color: white;
+}
+mat-paginator {
+  background-color: black;
+  color: white;
+}
+
+.articles-container {
+  flex-direction: column;
+  /* align-items: center; */
+  gap: 1rem;
+  margin-top: 30px;
+}
+.article-container {
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 1px solid #e2e2e2;
+  margin: 0 24px 24px;
+  padding-bottom: 24px;
+}
+.article-date-container {
+  color: rgb(153, 153, 153);
+  font-family: nyt-franklin, helvetica, arial, sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0px;
+  line-height: 0.6875rem;
+}
+.article-details-container {
+  display: flex;
+  flex-direction: column;
+  /* gap: 0.5rem; */
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.section-name {
+  font-family: nyt-franklin, helvetica, arial, sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  -webkit-letter-spacing: 0.5px;
+  -moz-letter-spacing: 0.5px;
+  -ms-letter-spacing: 0.5px;
+  letter-spacing: 0.5px;
+  line-height: 0.6875rem;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  color: #333;
+}
+.print-headline {
+  color: black;
+  /* font-size: 1.4375rem; */
+  /* line-height: 1.5625rem; */
+  font-size: 1.5rem !important;
+  font-family: nyt-cheltenham, georgia, "times new roman", times, serif;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+.abstract {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  overflow: hidden;
+  color: #333;
+  font-family: nyt-imperial, georgia, "times new roman", times, serif;
+  letter-spacing: 0.2px;
+}
+.byline-original {
+  color: #121212;
+  font-family: nyt-cheltenham, georgia, "times new roman", times, serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2px;
+  line-height: 0.75rem;
+  margin: 6px 0;
+}
+.divider {
+  width: 80px;
+  border-top: 1px solid #dcdcdc;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-size-adjust: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+.print-edition-tag {
+  font-family: nyt-franklin, helvetica, arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1rem;
+  font-size: 0.6875rem;
+  color: #000;
+  text-transform: uppercase;
+  margin-right: 7px;
+}
+.print-date {
+  font-family: nyt-cheltenham, georgia, "times new roman", times, serif;
+  font-style: normal;
+  line-height: 1rem;
+  font-size: 0.9375rem;
+  color: #000;
+  margin-right: 5px;
+  display: block;
+  width: 150%;
+  max-width: 360px;
+  min-width: fit-content;
+}

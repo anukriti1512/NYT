@@ -3,7 +3,6 @@
   style="display: flex; justify-items: center; justify-content: center"
 >
   <div class="category-nav-container">
-    <!-- <div class="row col-10"> -->
     <ul class="category-nav">
       <li class="category-nav-item">
         <a [routerLink]="['/section/world']">World</a>
@@ -12,7 +11,6 @@
         <a [routerLink]="['/section/science']">Science</a>
       </li>
     </ul>
-    <!-- </div> -->
   </div>
 </div>
 
@@ -21,6 +19,49 @@
   style="display: flex; justify-items: center; justify-content: center"
 >
   <div class="line-container"></div>
+  <div
+    class=""
+    style="
+      display: flex;
+      justify-content: center;
+      background-color: black;
+      width: 80%;
+      align-items: baseline;
+    "
+  >
+    <mat-form-field
+      class="example-form-field col-5"
+      appearance="fill"
+      style="color: white; margin: 0.5rem"
+    >
+      <mat-label style="color: white">Search Keyword</mat-label>
+      <input
+        style="background-color: #222121"
+        matInput
+        type="text"
+        [(ngModel)]="value"
+      />
+      <button
+        *ngIf="value"
+        matSuffix
+        mat-icon-button
+        aria-label="Clear"
+        (click)="value = ''"
+      >
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <button
+      *ngIf="value.trim().length > 0"
+      matSuffix
+      mat-icon-button
+      aria-label="search"
+      (click)="searchArticle(value)"
+    >
+      <mat-icon>search</mat-icon>
+    </button>
+  </div>
 </div>
 
 <div class="news-container">
@@ -42,10 +83,6 @@
               </p>
             </div>
           </mat-card-content>
-          <!-- <mat-card-actions>
-        <button mat-button>LIKE</button>
-        <button mat-button>SHARE</button>
-      </mat-card-actions> -->
         </div>
         <img [src]="topStory.multimedia[0].url" class="col-3" />
       </div>

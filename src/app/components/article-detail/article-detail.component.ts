@@ -18,18 +18,13 @@ export class ArticleDetailComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    // get uri from the URL
     this.Activatedroute.paramMap.subscribe((params) => {
-      //  console.log();
       this.uri = params.get('uri');
     });
 
+    //getting article details by using article search API
     this.articleDetailsService.getArticleDetails(this.uri).subscribe((data) => {
-      console.log(
-        'article details api data using web url',
-        data.response.docs[0]
-      );
-      console.log(Object.entries(data));
-      // this.articleDetailsData = data['response'].docs;
       this.articleDetailsData = data.response.docs[0];
     });
   }

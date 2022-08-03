@@ -1,0 +1,112 @@
+<!-- search bar -->
+<div class="search-container">
+  <div class="col-6">
+    <mat-form-field class="example-form-field col-8" appearance="fill">
+      <mat-label style="color: white">Search Keyword</mat-label>
+      <input matInput type="text" [(ngModel)]="value" />
+      <button
+        *ngIf="value"
+        matSuffix
+        mat-icon-button
+        aria-label="Clear"
+        (click)="value = ''"
+      >
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <button
+      *ngIf="value"
+      matSuffix
+      mat-icon-button
+      aria-label="Clear"
+      (click)="searchQuery(value)"
+    >
+      <mat-icon>search</mat-icon>
+    </button>
+    <!-- <button (click)="searchQuery(value)"><mat-icon>search</mat-icon></button> -->
+  </div>
+
+  <!-- ------------------------- -->
+  <div>
+    <mat-paginator
+      [length]="length"
+      [pageSize]="pageSize"
+      [pageIndex]="pageIndex"
+      [pageSizeOptions]="pageSizeOptions"
+      (page)="getPageEvent($event)"
+      aria-label="Select page"
+    >
+    </mat-paginator>
+    <!-- [pageSizeOptions]="pageSizeOptions" -->
+  </div>
+</div>
+<!-- 
+<mat-paginator
+  [length]="length"
+  [pageSize]="pageSize"
+  [pageIndex]="pageIndex"
+  [pageSizeOptions]="pageSizeOptions"
+  (page)="getPageEvent($event)"
+  aria-label="Select page"
+>
+</mat-paginator> -->
+<!-- [pageSizeOptions]="pageSizeOptions" -->
+
+<ng-container *ngIf="value.trim().length > 0">
+  <div class="results col-8">
+    <b
+      ><u>
+        <h4 style="font-size: 1.5rem">Search Results for : {{ value }}</h4></u
+      ></b
+    >
+  </div>
+</ng-container>
+
+<div class="main-container">
+  <div class="articles-container col-7 row">
+    <ng-container *ngFor="let article of articles">
+      <div class="">
+        <div
+          class="col-12 article-container"
+          (click)="articleDetails(article.uri)"
+        >
+          <div class="article-date-container col-2">
+            {{ article.pub_date | date }}
+          </div>
+
+          <!-- article details section start -->
+          <div class="article-details-container col-8">
+            <div class="section-name" *ngIf="article.section_name">
+              {{ article.section_name }}
+            </div>
+            <div *ngIf="article.headline.print_headline">
+              <h4 class="print-headline">
+                {{ article.headline.print_headline }}
+              </h4>
+            </div>
+            <div
+              class="abstract"
+              *ngIf="article.abstract"
+              [innerHTML]="article.abstract"
+            >
+              <!-- {{ article.abstract }} -->
+            </div>
+            <div class="byline-original" *ngIf="article.byline.original">
+              {{ article.byline.original }}
+            </div>
+
+            <!-- print editoin container -->
+            <div class="print-edition-conatiner">
+              <div class="divider"></div>
+              <div class="print-edition-tag">PRINT EDITION</div>
+              <div class="print-date">{{ article.pub_date | date }}</div>
+            </div>
+            <!-- print editoin container ends -->
+          </div>
+          <!-- article details section end -->
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

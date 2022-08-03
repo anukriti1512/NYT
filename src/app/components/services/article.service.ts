@@ -17,4 +17,20 @@ export class ArticleService {
         `articlesearch.json?fq=_id:("${articleURI}")&api-key=${this.API_Key}`
     );
   }
+
+  getSearchQueryArticles(query: string, pageNumber: number) {
+    // https://api.nytimes.com/svc/search/v2/articlesearch.json?q=election&api-key=iGE3e1cqW5GI6LPlcI1xOQiIHF1awGNm
+
+    // for pagination
+    // https://api.nytimes.com/svc/search/v2/articlesearch.json?q=election&page=1&api-key=iGE3e1cqW5GI6LPlcI1xOQiIHF1awGNm
+
+    return this.http.get(
+      this.API_URL +
+        `articlesearch.json?q=${query}&page=${pageNumber}&api-key=${this.API_Key}`
+    );
+
+    // return this.http.get(
+    //   this.API_URL + `articlesearch.json?q=${query}&api-key=${this.API_Key}`
+    // );
+  }
 }

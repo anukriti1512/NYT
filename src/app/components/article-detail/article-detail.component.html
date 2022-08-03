@@ -1,7 +1,9 @@
 <div class="row" class="main-container">
   <div class="article-details-container col-7">
+    <!-- headline -->
     <div class="heading-container">{{ articleDetailsData?.headline.main }}</div>
     <div>
+      <!-- published date -->
       <div class="published-date-container">
         {{ articleDetailsData?.pub_date | date }}
       </div>
@@ -9,6 +11,7 @@
         {{ articleDetailsData?.byline.original }}
       </div>
     </div>
+    <!-- lead paragraph -->
     <div class="paragraph-container">
       {{ articleDetailsData?.lead_paragraph }}
     </div>
