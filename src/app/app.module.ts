@@ -12,7 +12,6 @@ import { AngularMaterialModule } from './Angular Material module/angular-materia
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
 import { ArticleDetailComponent } from './components/article-detail/article-detail.component';
 import { SearchScreenComponent } from './components/search-screen/search-screen.component';
@@ -24,7 +23,6 @@ import { DataSharingService } from './components/services/data-sharing.service';
     AppComponent,
     HomeComponent,
     HeaderComponent,
-    FooterComponent,
     LoginComponent,
     ArticleDetailComponent,
     SearchScreenComponent,
