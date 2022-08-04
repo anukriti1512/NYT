@@ -23,6 +23,10 @@ export class SearchScreenComponent implements OnInit {
   searchKeyword: any;
   page: any;
 
+  //flags
+  showContent: boolean = false;
+  showLoader: boolean = true;
+
   constructor(
     private articleDetailsService: ArticleService,
     private Activatedroute: ActivatedRoute,
@@ -32,6 +36,7 @@ export class SearchScreenComponent implements OnInit {
 
   ngOnInit(): void {
     // subscriubing to the location service
+    this.showLoader = true;
     this.location.subscribe((event) => {
       // event is fired on click of forward and back browser button
       let url: any = event.url?.split('/'); // split URL to read values from  it
@@ -60,12 +65,25 @@ export class SearchScreenComponent implements OnInit {
     this.pageIndex = pageNumber;
 
     // getting data via API call
+    this.showLoader = true;
     this.articleDetailsService
       .getSearchQueryArticles(this.searchKeyword, pageNumber)
-      .subscribe((data: any) => {
-        this.articles = data.response.docs;
-        this.length = data.response.meta.hits;
-      });
+      .subscribe(
+        (data: any) => {
+          this.articles = data.response.docs;
+          this.length = data.response.meta.hits;
+          this.showContent = true;
+          this.showLoader = false;
+        },
+        (err) => {
+          console.log('error encountered', err.error.fault.faultstring);
+          alert(
+            'Error encountered in fetching details - ' +
+              err.error.fault.faultstring
+          );
+          this.showLoader = false;
+        }
+      );
   }
 
   // event fired when page is navigated in paginator

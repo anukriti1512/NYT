@@ -10,22 +10,25 @@ import { HomeService } from 'src/app/components/services/home.service';
 export class WorldComponent implements OnInit {
   // variables
   topStories: any[] = [];
-  longText = `The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog
- from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was
- originally bred for hunting.`;
 
   //
 
   constructor(public homeService: HomeService, private router: Router) {}
 
   ngOnInit(): void {
-    this.homeService.getSectionCategoryStories('world').subscribe((d: any) => {
-      console.log('world data', d);
-      console.log(d.results);
-      this.topStories = d.results;
-      console.log(Object.entries(d));
-      console.log('Top stories API DATA', this.topStories);
-    });
+    // get top stories corresponding to category --  world
+    this.homeService.getSectionCategoryStories('world').subscribe(
+      (d: any) => {
+        console.log('world data', d);
+        console.log(d.results);
+        this.topStories = d.results;
+        console.log(Object.entries(d));
+        console.log('Top stories API DATA', this.topStories);
+      },
+      (error) => {
+        alert(error.message);
+      }
+    );
   }
 
   viewArticle(url: string, uri: string) {

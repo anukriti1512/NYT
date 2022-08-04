@@ -12,11 +12,9 @@ const routes: Routes = [
     children: [
       { path: 'world', component: WorldComponent },
       { path: 'science', component: ScienceComponent },
+      { path: '**', redirectTo: '/home' },
     ],
   },
-  // { path: '', component: HomeComponent },
-  // { path: 'world', component: WorldComponent },
-  // { path: 'science', component: ScienceComponent },
 ];
 
 @NgModule({

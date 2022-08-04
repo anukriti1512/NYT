@@ -1,0 +1,11 @@
+<div>
+  <h4><b>Comments : </b></h4>
+  <!-- show loader at the time of API call -->
+  <div *ngIf="showLoader"><mat-spinner [diameter]="20"></mat-spinner></div>
+
+  <!-- show message to user on failure of loading comments -->
+  <div *ngIf="errorFlag && !showLoader">
+    <p><i>Couldn't load comments</i></p>
+  </div>
+  <!-- ------ -->
+</div>

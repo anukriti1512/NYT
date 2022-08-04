@@ -23,12 +23,24 @@
             <input type="text" formControlName="lastName" />
 
             <label> Email : </label>
-            <input type="text" formControlName="email" />
+            <input
+              type="text"
+              formControlName="email"
+              (keydown.space)="$event.preventDefault()"
+            />
 
             <label> Password : </label>
-            <input type="password" formControlName="password" />
-
-            <button type="submit">Register</button>
+            <input
+              type="password"
+              formControlName="password"
+              (keydown.space)="$event.preventDefault()"
+            />
+            <label *ngIf="signUpForm.status === 'INVALID'" style="color: red">
+              Enter details to enable Register button
+            </label>
+            <button [disabled]="signUpForm.status === 'INVALID'" type="submit">
+              Register
+            </button>
             <div class="separator">
               <span>or</span>
             </div>
@@ -38,7 +50,9 @@
       </form>
     </div>
     <!-- signup form ends -->
-    <!-- --------------------------------------------------------------------------------- -->
+
+    <!-- ------- -->
+
     <!-- login form -->
     <div class="col-10 main-form-container" *ngSwitchCase="'login'">
       <form
@@ -49,10 +63,20 @@
         <div class="col-9 form-group-container">
           <div class="col-10 form-contents">
             <label> Email : </label>
-            <input type="text" formControlName="email" />
+            <input
+              type="text"
+              formControlName="email"
+              (keydown.space)="$event.preventDefault()"
+            />
             <label> Password : </label>
-            <input type="password" formControlName="password" />
-            <button type="submit">Log in</button>
+            <input
+              type="password"
+              formControlName="password"
+              (keydown.space)="$event.preventDefault()"
+            />
+            <button [disabled]="loginForm.status === 'INVALID'" type="submit">
+              Log in
+            </button>
             <div class="separator">
               <span>or</span>
             </div>
@@ -64,67 +88,3 @@
     </div>
   </div>
 </div>
-
-<!-- signUp form -->
-<!-- <div class="form-container-group" [ngSwitch]="mode">
-  <div
-    class="col-8"
-    style="display: flex; justify-content: center"
-    *ngSwitchCase="'signUp'"
-  >
-    <div class="col-12" style="display: flex; justify-content: center">
-      <form
-        [formGroup]="signUpForm"
-        (ngSubmit)="onSubmitSignUpForm(signUpForm)"
-        class="form-container-group1 col-12"
-      >
-        <div
-          class="col-10"
-          style="
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 12px;
-          "
-        >
-          <div class="col-10 label-input-container">
-            <label> First Name : </label>
-            <input type="text" formControlName="firstName" />
-          </div>
-
-          <div class="col-10 label-input-container">
-            <label> Last Name : </label>
-            <input type="text" formControlName="lastName" />
-          </div>
-          <div class="col-10 label-input-container">
-            <label> Email : </label>
-            <input type="text" formControlName="email" />
-          </div>
-          <div class="col-10 label-input-container">
-            <label> Password : </label>
-            <input type="password" formControlName="password" />
-          </div>
-          <div class="col-10 label-input-container">
-            <button type="submit">Register</button>
-          </div>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <div class="col-8" *ngSwitchCase="'login'">
-    <form
-      [formGroup]="loginForm"
-      (ngSubmit)="onSubmitLoginForm(loginForm)"
-      class="form-container-group1 col-12"
-    >
-      <label> Email : </label>
-      <input type="text" formControlName="email" />
-
-      <label> Password : </label>
-      <input type="password" formControlName="password" />
-
-      <button type="submit">Log in</button>
-    </form>
-  </div>
-</div> -->

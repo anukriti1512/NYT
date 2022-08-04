@@ -130,3 +130,16 @@ mat-paginator {
   max-width: 360px;
   min-width: fit-content;
 }
+.no-results-container {
+  display: flex;
+  justify-content: center;
+}
+.spinner {
+  display: flex;
+  justify-content: center;
+  margin: 10rem;
+}
+:host ::ng-deep .mat-progress-spinner circle,
+.mat-spinner circle {
+  stroke: black;
+}

@@ -1,5 +1,5 @@
 <div class="row" class="main-container">
-  <div class="article-details-container col-7">
+  <div class="article-details-container col-5">
     <!-- headline -->
     <div class="heading-container">{{ articleDetailsData?.headline.main }}</div>
     <div>
@@ -13,7 +13,14 @@
     </div>
     <!-- lead paragraph -->
     <div class="paragraph-container">
+      {{ articleDetailsData?.snippet }}
       {{ articleDetailsData?.lead_paragraph }}
     </div>
+
+    <!-- get article commments -->
+    <div *ngIf="articleDetailsData">
+      <app-article-comments [uri]="uri"></app-article-comments>
+    </div>
+    <!-- ------------------------------ -->
   </div>
 </div>

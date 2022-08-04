@@ -1,3 +1,10 @@
+<div class="section-heading">
+  <h2 style="font-size: 1.5rem">
+    <b><u>Section : Science</u></b>
+  </h2>
+</div>
+
+<!-- cards container -->
 <div class="news-container">
   <ng-container *ngFor="let topStory of topStories">
     <div
@@ -22,10 +29,6 @@
                 </p>
               </div>
             </mat-card-content>
-            <!-- <mat-card-actions>
-            <button mat-button>LIKE</button>
-            <button mat-button>SHARE</button>
-          </mat-card-actions> -->
           </div>
           <ng-container *ngIf="topStory?.multimedia">
             <img
@@ -39,3 +42,4 @@
     </div>
   </ng-container>
 </div>
+<!-- cards container ends-->

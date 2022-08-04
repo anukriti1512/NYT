@@ -21,3 +21,6 @@
   padding-bottom: 1px;
   width: 81.5%;
 }
+.logo {
+  cursor: pointer;
+}

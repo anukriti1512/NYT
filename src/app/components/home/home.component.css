@@ -1,3 +1,18 @@
+.spinner {
+  display: flex;
+  justify-content: center;
+  margin: 10rem;
+}
+:host ::ng-deep .mat-progress-spinner circle,
+.mat-spinner circle {
+  stroke: black;
+}
+
+.outer-container-category {
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+}
 .category-nav {
   display: flex;
   justify-content: center;

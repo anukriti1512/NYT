@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DataSharingService } from '../services/data-sharing.service';
 
 @Component({
   selector: 'app-header',
@@ -7,10 +8,24 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-  constructor(private router: Router) {}
+  isUserLoggedIn: boolean = false;
+  constructor(
+    private router: Router,
+    private dataSharingService: DataSharingService
+  ) {
+    this.dataSharingService.isUserLoggedIn.subscribe((value) => {
+      this.isUserLoggedIn = value;
+    });
+  }
 
   ngOnInit(): void {}
+
   login() {
+    // navigate to login component page
     this.router.navigate(['/login/']);
+  }
+  navigateToHome() {
+    // navigate to home component page on click of logo
+    this.router.navigateByUrl('/home');
   }
 }

@@ -11,6 +11,7 @@ export class ArticleService {
 
   constructor(private http: HttpClient) {}
 
+  // get article details when tapping on an specified article
   getArticleDetails(articleURI: string) {
     return this.http.get<any>(
       this.API_URL +
@@ -18,19 +19,20 @@ export class ArticleService {
     );
   }
 
+  // get stories based on the search keyword
   getSearchQueryArticles(query: string, pageNumber: number) {
-    // https://api.nytimes.com/svc/search/v2/articlesearch.json?q=election&api-key=iGE3e1cqW5GI6LPlcI1xOQiIHF1awGNm
-
-    // for pagination
-    // https://api.nytimes.com/svc/search/v2/articlesearch.json?q=election&page=1&api-key=iGE3e1cqW5GI6LPlcI1xOQiIHF1awGNm
-
     return this.http.get(
       this.API_URL +
         `articlesearch.json?q=${query}&page=${pageNumber}&api-key=${this.API_Key}`
     );
+  }
 
-    // return this.http.get(
-    //   this.API_URL + `articlesearch.json?q=${query}&api-key=${this.API_Key}`
-    // );
+  // get comments corresponding to an article
+
+  getArticleComments() {
+    // this article comments API doesn't exist anymore on the offcial website of newyork times page
+    return this.http.get(
+      'https://developer.nytimes.com/docs/community-api-product/1/overview '
+    );
   }
 }

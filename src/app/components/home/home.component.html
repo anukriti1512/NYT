@@ -1,7 +1,5 @@
-<div
-  class="row"
-  style="display: flex; justify-items: center; justify-content: center"
->
+<!-- categories container -->
+<div class="row outer-container-category">
   <div class="category-nav-container">
     <ul class="category-nav">
       <li class="category-nav-item">
@@ -13,7 +11,9 @@
     </ul>
   </div>
 </div>
+<!-- categories container ends-->
 
+<!-- search input container -->
 <div
   class="row"
   style="display: flex; justify-items: center; justify-content: center"
@@ -63,8 +63,16 @@
     </button>
   </div>
 </div>
+<!-- search input container ends-->
 
+<!-- top-stories containner -->
 <div class="news-container">
+  <!-- spinner -->
+  <div class="spinner" *ngIf="showLoader">
+    <mat-spinner [diameter]="70"></mat-spinner>
+  </div>
+  <!-- spinner ends -->
+
   <div class="row col-10" *ngFor="let topStory of topStories">
     <mat-card
       class="example-card"
@@ -87,7 +95,7 @@
         <img [src]="topStory.multimedia[0].url" class="col-3" />
       </div>
     </mat-card>
-
     <hr />
   </div>
 </div>
+<!-- top-stories containner ends -->

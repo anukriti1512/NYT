@@ -6,6 +6,7 @@ import { LoginComponent } from './components/login/login.component';
 import { SearchScreenComponent } from './components/search-screen/search-screen.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
   { path: 'article-detail/:uri', component: ArticleDetailComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
       ),
   },
   { path: 'search/:query', component: SearchScreenComponent },
+  { path: '**', redirectTo: '/home' },
 ];
 
 @NgModule({
