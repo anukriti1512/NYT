@@ -1,64 +1,115 @@
-<!-- <div class="container text-center">
-  <h5>Create an account or Log in</h5>
-
- signUp form
-  <div class="row text-center">
-    <form [formGroup]="signUpForm" (ngSubmit)="onSubmitSignUpForm(signUpForm)">
-      <label> First Name : </label>
-      <input type="text" formControlName="firstName" />
-
-      <label> Last Name : </label>
-      <input type="text" formControlName="lastName" />
-
-      <label> Email : </label>
-      <input type="text" formControlName="email" />
-
-      <label> Password : </label>
-      <input type="password" formControlName="password" />
-
-      <button type="submit">Register</button>
-    </form>
-  </div>
-
-  <form [formGroup]="loginForm" (ngSubmit)="onSubmitLoginForm(loginForm)">
-    <label> Email : </label>
-    <input type="text" formControlName="email" />
-
-    <label> Password : </label>
-    <input type="password" formControlName="password" />
-
-    <button type="submit">Log in</button>
-  </form>
-</div> -->
-
 <div class="main-container">
   <div>
-    <h5>Create an account or Log in</h5>
+    <h2>Create an account or Log in</h2>
+  </div>
+</div>
+
+<!-- form -->
+<div class="main-form-container" [ngSwitch]="mode">
+  <div class="col-10 main-form-container">
+    <!-- signup-form -->
+    <div class="col-10 main-form-container" *ngSwitchCase="'signUp'">
+      <form
+        [formGroup]="signUpForm"
+        (ngSubmit)="onSubmitSignUpForm(signUpForm)"
+        class="col-8 main-form-container"
+      >
+        <div class="col-9 form-group-container">
+          <div class="col-10 form-contents">
+            <label> First Name : </label>
+            <input type="text" formControlName="firstName" />
+
+            <label> Last Name : </label>
+            <input type="text" formControlName="lastName" />
+
+            <label> Email : </label>
+            <input type="text" formControlName="email" />
+
+            <label> Password : </label>
+            <input type="password" formControlName="password" />
+
+            <button type="submit">Register</button>
+            <div class="separator">
+              <span>or</span>
+            </div>
+            <a (click)="mode = 'login'"><u>Login</u></a>
+          </div>
+        </div>
+      </form>
+    </div>
+    <!-- signup form ends -->
+    <!-- --------------------------------------------------------------------------------- -->
+    <!-- login form -->
+    <div class="col-10 main-form-container" *ngSwitchCase="'login'">
+      <form
+        [formGroup]="loginForm"
+        (ngSubmit)="onSubmitLoginForm(loginForm)"
+        class="col-8 main-form-container"
+      >
+        <div class="col-9 form-group-container">
+          <div class="col-10 form-contents">
+            <label> Email : </label>
+            <input type="text" formControlName="email" />
+            <label> Password : </label>
+            <input type="password" formControlName="password" />
+            <button type="submit">Log in</button>
+            <div class="separator">
+              <span>or</span>
+            </div>
+            <a (click)="mode = 'signUp'"><u>Register</u></a>
+          </div>
+        </div>
+      </form>
+      <!-- login form ends -->
+    </div>
   </div>
 </div>
 
 <!-- signUp form -->
-<div class="form-container-group row" [ngSwitch]="mode">
-  <div class="col-8" *ngSwitchCase="'signUp'">
-    <form
-      [formGroup]="signUpForm"
-      (ngSubmit)="onSubmitSignUpForm(signUpForm)"
-      class="form-container-group1 col-12"
-    >
-      <label> First Name : </label>
-      <input type="text" formControlName="firstName" />
+<!-- <div class="form-container-group" [ngSwitch]="mode">
+  <div
+    class="col-8"
+    style="display: flex; justify-content: center"
+    *ngSwitchCase="'signUp'"
+  >
+    <div class="col-12" style="display: flex; justify-content: center">
+      <form
+        [formGroup]="signUpForm"
+        (ngSubmit)="onSubmitSignUpForm(signUpForm)"
+        class="form-container-group1 col-12"
+      >
+        <div
+          class="col-10"
+          style="
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+          "
+        >
+          <div class="col-10 label-input-container">
+            <label> First Name : </label>
+            <input type="text" formControlName="firstName" />
+          </div>
 
-      <label> Last Name : </label>
-      <input type="text" formControlName="lastName" />
-
-      <label> Email : </label>
-      <input type="text" formControlName="email" />
-
-      <label> Password : </label>
-      <input type="password" formControlName="password" />
-
-      <button type="submit">Register</button>
-    </form>
+          <div class="col-10 label-input-container">
+            <label> Last Name : </label>
+            <input type="text" formControlName="lastName" />
+          </div>
+          <div class="col-10 label-input-container">
+            <label> Email : </label>
+            <input type="text" formControlName="email" />
+          </div>
+          <div class="col-10 label-input-container">
+            <label> Password : </label>
+            <input type="password" formControlName="password" />
+          </div>
+          <div class="col-10 label-input-container">
+            <button type="submit">Register</button>
+          </div>
+        </div>
+      </form>
+    </div>
   </div>
 
   <div class="col-8" *ngSwitchCase="'login'">
@@ -76,4 +127,4 @@
       <button type="submit">Log in</button>
     </form>
   </div>
-</div>
+</div> -->

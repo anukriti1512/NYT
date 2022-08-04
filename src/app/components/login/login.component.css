@@ -2,6 +2,13 @@ h4,
 h5 {
   font-family: nyt-cheltenham, georgia, "times new roman", times, serif;
 }
+h2 {
+  color: rgb(18, 18, 18);
+  font-family: nyt-cheltenham, georgia, "times new roman", times, serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 125%;
+}
 
 label {
   font-size: 0.75em;
@@ -12,20 +19,99 @@ label {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-.form-container-group {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.form-container-group1 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
+  margin-bottom: 1rem;
 }
 label {
   display: inline-block;
   width: 12rem;
   text-align: left;
+}
+h5 {
+  font-size: 1rem !important;
+}
+input {
+  width: 100%;
+  height: 2.5rem;
+  padding: 0px 0.5rem;
+  border-radius: 3px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: normal;
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  outline: none;
+  box-sizing: border-box;
+  overflow: hidden;
+  border: 1px solid black;
+  appearance: none;
+  opacity: 1;
+  box-shadow: none;
+  transition: box-shadow 200ms linear 0s;
+}
+
+.main-form-container {
+  display: flex;
+  justify-content: center;
+}
+.form-group-container {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+button {
+  width: 100%;
+  height: 3em;
+  line-height: 2.375em;
+  font-family: nyt-franklin, helvetica, arial, sans-serif;
+  font-size: 1em;
+  font-weight: 700;
+  cursor: pointer;
+  border: 0.0625em solid rgb(18, 18, 18);
+  border-radius: 0.2em;
+  box-sizing: border-box;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  background-image: none;
+  color: rgb(255, 255, 255);
+  background-color: rgb(18, 18, 18);
+  transition: all 0.15s ease-in 0s;
+  margin-top: 0.5rem;
+}
+
+.form-contents {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.separator {
+  display: inline-block;
+  height: 14px;
+  /* font-size: 0.875em; */
+  margin: 1.1em 0px 0px;
+  line-height: 1em;
+  font-weight: 500;
+  font-family: nyt-franklin, helvetica, arial, sans-serif;
+  color: rgb(102, 102, 102);
+  position: relative;
+  text-align: center;
+}
+.separator::before {
+  left: 0px;
+  margin-right: 0.5em;
+}
+.separator::after {
+  right: 0px;
+  margin-left: 0.5em;
+}
+.separator::after,
+.separator::before {
+  position: absolute;
+  display: inline-block;
+  content: "";
+  top: 50%;
+  width: calc(50% - 1em);
+  height: 0px;
+  border-bottom: 1px solid rgb(204, 204, 204);
 }
